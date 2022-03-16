@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "client": "node src/client/client.js",
+    "server": "node src/server/server.js"
+  },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.8"
   }
