@@ -17,4 +17,4 @@ npm client
 Things to pay attention: 
  
 - use npm, not yarn. 
-- ```.proto``` project root
+- ```.proto``` project root 
