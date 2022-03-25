@@ -16,11 +16,11 @@ var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
 const NewsService = grpc.loadPackageDefinition(packageDefinition).NewsService;
 
 const client = new NewsService(
-  "localhost:50051",
+  "127.0.0.1:50051",
   grpc.credentials.createInsecure()
 );
 
 client.getAllNews({}, (error, news) => {
-    if (!error) throw error
+    if (!error) console.log(error); 
       console.log(news);
   });
