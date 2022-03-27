@@ -1,19 +1,9 @@
 const grpc = require("@grpc/grpc-js");
 var protoLoader = require("@grpc/proto-loader");
 
-const PROTO_PATH = "./news.proto";
+const gRPCPackegeDefinition = require('../config/packageDefinition')
 
-const options = {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true,
-};
-
-var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
-
-const NewsService = grpc.loadPackageDefinition(packageDefinition).NewsService;
+const NewsService = grpc.loadPackageDefinition(gRPCPackegeDefinition).NewsService;
 
 const client = new NewsService(
   "127.0.0.1:50051",

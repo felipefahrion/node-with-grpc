@@ -1,19 +1,8 @@
-var protoLoader = require("@grpc/proto-loader");
-const grpc = require("@grpc/grpc-js");
+const grpc = require("@grpc/grpc-js")
 const news = require('../../db/news')
+const gRPCPackegeDefinition = require('../config/packageDefinition')
 
-const PROTO_PATH = "./news.proto";
-
-const options = {
-  keepCase: true,
-  longs: String,
-  enums: String,
-  defaults: true,
-  oneofs: true,
-};
-
-var packageDefinition = protoLoader.loadSync(PROTO_PATH, options);
-const newsProto = grpc.loadPackageDefinition(packageDefinition);
+const newsProto = grpc.loadPackageDefinition(gRPCPackegeDefinition);
 
 const server = new grpc.Server();
 
