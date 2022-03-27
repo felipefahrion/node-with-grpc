@@ -1,5 +1,7 @@
 # Nodejs with gRPC
 
+This project contains a test for gRPC in Nodejs
+
 To execute this project: 
 
 Terminal 1: 
