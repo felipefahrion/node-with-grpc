@@ -21,8 +21,8 @@ To test on Postman foloow this link: https://blog.postman.com/postman-now-suppor
 Test perfomance to this project and use this tool: https://dev.to/hiisi13/easy-ways-to-load-test-a-grpc-service-1dm3
 
 ```
-ghz -c 100 -n 10000000 --insecure \
-  --proto ./news.proto \
+ghz -c 100 -n 100 --insecure \
+  --proto ./src/grpc/config/news.proto \
   --call NewsService.GetAllNews \
   -d '{}' \
   localhost:50051
