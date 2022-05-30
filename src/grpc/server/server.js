@@ -8,8 +8,17 @@ const server = new grpc.Server();
 
 server.addService(newsProto.NewsService.service, {
   getAllNews: (_, callback) => {
-    callback(null, news);
+    callback(null, news)
   },
+  getNewsById: (_, callback) => {
+    callback(null, news)
+  },
+  createNews: (_, callback) => {
+    callback(null, news)
+  },
+  deleteNewsById: (_, callback) => {
+    callback(null, news)
+  }
 });
 
 server.bindAsync(
