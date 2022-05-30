@@ -21,10 +21,6 @@ server.addService(newsProto.NewsService.service, {
 
   createNews: ({ request: {title, body, postImage } }, callback) => {
 
-    const news = newsList.news.find((e) => e.title === title)
-    
-    if (news) return callback(new Error('Not found'), null)
-
     const newNews = {
       id: (newsList.news.length + 1).toString(),
       title: title,

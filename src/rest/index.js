@@ -36,11 +36,7 @@ app.delete('/delete/:id', (req, res) => {
 app.post('/create', (req, res) => {
 
   const {title, body, postImage} = req.body
-
-  const news = newsList.news.find((e) => e.title === title)
     
-  if (news) return res.send(new Error('Not found'), null)
-
   const newNews = {
     id: (newsList.news.length + 1).toString(),
     title,
