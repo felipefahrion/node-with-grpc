@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+message Empty {}
+
 message News {
     string id = 1;
     string title = 2;
@@ -7,12 +9,17 @@ message News {
     string postImage = 4;
 }
 
-service NewsService {
-    rpc GetAllNews (Empty) returns (NewsList) {}
+message NewsList {
+    repeated News news = 1;
 }
 
-message Empty {}
+message NewsId {
+    string id = 1;
+}
 
-message NewsList {
-   repeated News news = 1;
+service NewsService {
+    rpc GetAllNews (Empty) returns (NewsList) {}
+    rpc CreateNews (News) returns (News) {}
+    rpc GetNewsById (NewsId) returns (News) {}
+    rpc DeleteNewsById (NewsId) returns (News) {}
 }
