@@ -4,13 +4,14 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "client": "node src/grpc/client/client.js",
-    "server": "node src/grpc/server/server.js",
-    "rest":  "node src/rest/index.js",
+    "client": "nodemon --inspect src/grpc/client/client.js",
+    "server": "nodemon --inspect src/grpc/server/server.js",
+    "rest": "nodemon --inspect src/rest/index.js",
     "per-rest": "artillery quick --count 20 --num 10 http://localhost:3000/getAll"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
   }
 }
