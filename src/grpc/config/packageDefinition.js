@@ -1,5 +1,5 @@
 const protoLoader = require("@grpc/proto-loader");
-const PROTO_PATH = "./news.proto";
+const PROTO_PATH = __dirname + "/news.proto";
 
 const options = {
     keepCase: true,

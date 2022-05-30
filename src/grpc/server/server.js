@@ -1,5 +1,5 @@
 const grpc = require("@grpc/grpc-js")
-const news = require('../../db/news')
+const news = require('../../../db/news')
 const gRPCPackegeDefinition = require('../config/packageDefinition')
 
 const newsProto = grpc.loadPackageDefinition(gRPCPackegeDefinition);

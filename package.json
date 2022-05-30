@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "client": "node src/client/client.js",
-    "server": "node src/server/server.js"
+    "client": "node src/grpc/client/client.js",
+    "server": "node src/grpc/server/server.js"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.8"
