@@ -5,9 +5,12 @@
   "license": "MIT",
   "scripts": {
     "client": "node src/grpc/client/client.js",
-    "server": "node src/grpc/server/server.js"
+    "server": "node src/grpc/server/server.js",
+    "rest":  "node src/rest/index.js",
+    "per-rest": "artillery quick --count 20 --num 10 http://localhost:3000/getAll"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.5.8"
+    "@grpc/grpc-js": "^1.5.8",
+    "express": "^4.18.1"
   }
 }
