@@ -20,17 +20,11 @@ app.get('/getById/:id', (req, res) => {
   return res.send(news);
 });
 
-app.delete('/delete/:id', (req, res) => {
-  const { id } = req.params
+app.delete('/delete/:index', (req, res) => {
+  const { index } = req.params
 
-  const newsIndex = newsList.news.findIndex((e) => e.id === id)
-
-  if (newsIndex > -1) {
-    newsList.news.splice(newsIndex, 1);
+    newsList.news.splice(index, 1);
     return res.send(newsList);
-  }
-
-  return res.send(new Error('Not found'))
 });
 
 app.post('/create', (req, res) => {

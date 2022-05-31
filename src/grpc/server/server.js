@@ -33,13 +33,9 @@ server.addService(newsProto.NewsService.service, {
     callback(null, newNews)
   },
   
-  deleteNewsById: ({ request: { id } }, callback) => {
+  deleteNewsById: ({ request: { index } }, callback) => {
 
-    const newsIndex = newsList.news.findIndex((e) => e.id === id)
-
-    if (newsIndex > -1) {
-      newsList.news.splice(newsIndex, 1);
-    }
+    newsList.news.splice(index, 1);
 
     callback(null, newsList)
   }
