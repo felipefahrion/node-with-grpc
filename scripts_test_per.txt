@@ -1,0 +1,16 @@
+Script de teste grpc com ghz
+
+  ghz -c 100 -n 100 --insecure \
+  --proto ./src/grpc/config/news.proto \
+  --call NewsService.GetAllNews \
+  -d '{}' \
+  -O html \
+  localhost:50051 > out_html.html
+
+  Script de teste rest 
+
+  artillery quick --count 20 --num 10 http://localhost:3000/getAll
+
+  ou 
+
+  rodar comando npm run per-rest

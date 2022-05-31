@@ -1,0 +1,418 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ghz</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@4.5.0/papaparse.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/britecharts/dist/css/britecharts.min.css"
+		type="text/css" />
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+
+</head>
+
+<body>
+
+	<section class="section">
+
+		<div class="container">
+
+
+			<h2 class="subtitle">Mon May 30 2022 @ 23:59:04</h2>
+
+		</div>
+		<br />
+
+		<div class="container">
+			<nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+				<ul>
+					<li>
+						<a href="#summary">
+							<span class="icon is-small">
+								<i class="fas fa-clipboard-list" aria-hidden="true"></i>
+							</span>
+							<span>Summary</span>
+						</a>
+					</li>
+					<li>
+						<a href="#histogram">
+							<span class="icon is-small">
+								<i class="fas fa-chart-bar" aria-hidden="true"></i>
+							</span>
+							<span>Histogram</span>
+						</a>
+					</li>
+					<li>
+						<a href="#latency">
+							<span class="icon is-small">
+								<i class="far fa-clock" aria-hidden="true"></i>
+							</span>
+							<span>Latency Distribution</span>
+						</a>
+					</li>
+					<li>
+						<a href="#status">
+							<span class="icon is-small">
+								<i class="far fa-check-square" aria-hidden="true"></i>
+							</span>
+							<span>Status Distribution</span>
+						</a>
+					</li>
+
+					<li>
+						<a href="#data">
+							<span class="icon is-small">
+								<i class="far fa-file-alt" aria-hidden="true"></i>
+							</span>
+							<span>Data</span>
+						</a>
+					</li>
+					<li>
+						<a href="#options">
+							<span class="icon is-small">
+								<i class="fas fa-cog" aria-hidden="true"></i>
+							</span>
+							<span>Options</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<hr />
+		</div>
+
+
+
+		<div class="container">
+			<div class="columns">
+				<div class="column is-narrow">
+					<div class="content">
+						<a name="summary">
+							<h3>Summary</h3>
+						</a>
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Count</th>
+									<td>100</td>
+								</tr>
+								<tr>
+									<th>Total</th>
+									<td>22.01 ms</td>
+								</tr>
+								<tr>
+									<th>Slowest</th>
+									<td>21.10 ms</td>
+								</tr>
+								<tr>
+									<th>Fastest</th>
+									<td>13.16 ms</td>
+								</tr>
+								<tr>
+									<th>Average</th>
+									<td>16.74 ms</td>
+								</tr>
+								<tr>
+									<th>Requests / sec</th>
+									<td>4543.14</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="column">
+					<div class="content">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+		<div class="container">
+			<div class="content">
+				<a name="histogram">
+					<h3>Histogram</h3>
+				</a>
+				<p>
+				<div class="js-bar-container"></div>
+				</p>
+			</div>
+		</div>
+
+		<br />
+		<div class="container">
+			<div class="content">
+				<a name="latency">
+					<h3>Latency distribution</h3>
+				</a>
+				<table class="table is-fullwidth">
+					<thead>
+						<tr>
+
+							<th>10 %</th>
+
+							<th>25 %</th>
+
+							<th>50 %</th>
+
+							<th>75 %</th>
+
+							<th>90 %</th>
+
+							<th>95 %</th>
+
+							<th>99 %</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+
+							<td>13.52 ms</td>
+
+							<td>13.91 ms</td>
+
+							<td>15.71 ms</td>
+
+							<td>19.24 ms</td>
+
+							<td>19.91 ms</td>
+
+							<td>21.00 ms</td>
+
+							<td>21.10 ms</td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<br />
+		<div class="container">
+			<div class="columns">
+				<div class="column is-narrow">
+					<div class="content">
+						<a name="status">
+							<h3>Status distribution</h3>
+						</a>
+						<table class="table is-hoverable">
+							<thead>
+								<tr>
+									<th>Status</th>
+									<th>Count</th>
+									<th>% of Total</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td>OK</td>
+									<td>100</td>
+									<td>100.00 %</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<br />
+		<div class="container">
+			<div class="columns">
+				<div class="column is-narrow">
+					<div class="content">
+						<a name="data">
+							<h3>Data</h3>
+						</a>
+
+						<a class="button" id="dlJSON">JSON</a>
+						<a class="button" id="dlCSV">CSV</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<br />
+
+		<div class="container">
+			<div class="content">
+				<a name="options">
+					<h3>Options</h3>
+				</a>
+				<article class="message">
+					<div class="message-body">
+						<pre style="background-color: transparent;">{
+  "call": "NewsService.GetAllNews",
+  "host": "localhost:50051",
+  "proto": "./src/grpc/config/news.proto",
+  "import-paths": [
+    "src/grpc/config",
+    "."
+  ],
+  "insecure": true,
+  "load-schedule": "const",
+  "load-start": 0,
+  "load-end": 0,
+  "load-step": 0,
+  "load-step-duration": 0,
+  "load-max-duration": 0,
+  "concurrency": 100,
+  "concurrency-schedule": "const",
+  "concurrency-start": 0,
+  "concurrency-end": 0,
+  "concurrency-step": 1,
+  "concurrency-step-duration": 0,
+  "concurrency-max-duration": 0,
+  "total": 100,
+  "connections": 1,
+  "timeout": 20000000000,
+  "dial-timeout": 10000000000,
+  "data": {},
+  "binary": false,
+  "CPUs": 8
+}</pre>
+					</div>
+				</article>
+			</div>
+		</div>
+
+		<div class="container">
+			<hr />
+			<div class="content has-text-centered">
+				<p>
+					Generated by <strong>ghz</strong>
+				</p>
+				<a href="https://github.com/bojand/ghz"><i class="icon is-medium fab fa-github"></i></a>
+			</div>
+		</div>
+
+	</section>
+
+</body>
+
+<script>
+
+	const count = 100;
+
+	const rawData = [{ "timestamp": "2022-05-30T23:59:04.434619-03:00", "latency": 13350917, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434638-03:00", "latency": 18983541, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434647-03:00", "latency": 13432583, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434655-03:00", "latency": 13335333, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434661-03:00", "latency": 13952042, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434667-03:00", "latency": 19832459, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434669-03:00", "latency": 15682208, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434672-03:00", "latency": 13896375, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434678-03:00", "latency": 14856250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43468-03:00", "latency": 18185375, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434681-03:00", "latency": 15071708, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434683-03:00", "latency": 13532834, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434698-03:00", "latency": 13389208, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434686-03:00", "latency": 13501500, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434705-03:00", "latency": 18211250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434707-03:00", "latency": 19787833, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43471-03:00", "latency": 13563875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434713-03:00", "latency": 15107375, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434713-03:00", "latency": 21101458, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434721-03:00", "latency": 15695417, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434724-03:00", "latency": 13794000, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434726-03:00", "latency": 13214750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434728-03:00", "latency": 18301750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43473-03:00", "latency": 15228542, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434733-03:00", "latency": 19900875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434733-03:00", "latency": 13495667, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434735-03:00", "latency": 13650250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434741-03:00", "latency": 15246875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43474-03:00", "latency": 14086667, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434743-03:00", "latency": 13670583, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434747-03:00", "latency": 13908084, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434747-03:00", "latency": 13568958, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434749-03:00", "latency": 13161125, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434755-03:00", "latency": 13519875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434761-03:00", "latency": 15011792, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434766-03:00", "latency": 14659750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434769-03:00", "latency": 13672750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434771-03:00", "latency": 15787792, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434773-03:00", "latency": 20442084, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434774-03:00", "latency": 19981500, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434776-03:00", "latency": 21099917, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434777-03:00", "latency": 13783417, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434778-03:00", "latency": 15287708, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43478-03:00", "latency": 21091792, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43478-03:00", "latency": 18991667, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434782-03:00", "latency": 21047334, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434782-03:00", "latency": 13813250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434784-03:00", "latency": 15397417, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434784-03:00", "latency": 15284541, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434786-03:00", "latency": 20365083, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434789-03:00", "latency": 20098042, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434792-03:00", "latency": 21004750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434793-03:00", "latency": 19077875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434794-03:00", "latency": 15415792, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434796-03:00", "latency": 21055541, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434796-03:00", "latency": 19912292, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434804-03:00", "latency": 15427042, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434806-03:00", "latency": 14096041, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434809-03:00", "latency": 15693250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434811-03:00", "latency": 13476875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434816-03:00", "latency": 13636041, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434819-03:00", "latency": 15712750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434822-03:00", "latency": 15841542, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434834-03:00", "latency": 15978500, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43484-03:00", "latency": 15573542, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434844-03:00", "latency": 18085709, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434849-03:00", "latency": 15701292, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434854-03:00", "latency": 15736750, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434871-03:00", "latency": 18151250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434875-03:00", "latency": 15632833, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434893-03:00", "latency": 16022083, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434895-03:00", "latency": 19182708, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434905-03:00", "latency": 13855167, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434912-03:00", "latency": 13911292, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434911-03:00", "latency": 15539708, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434919-03:00", "latency": 16056042, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434934-03:00", "latency": 19244584, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434936-03:00", "latency": 15701625, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434939-03:00", "latency": 19171250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.43494-03:00", "latency": 18232542, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434942-03:00", "latency": 18429584, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434944-03:00", "latency": 15702125, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434944-03:00", "latency": 19097000, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434947-03:00", "latency": 18350250, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434963-03:00", "latency": 19583458, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434966-03:00", "latency": 18621334, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434967-03:00", "latency": 19011292, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434967-03:00", "latency": 19110000, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434971-03:00", "latency": 19096667, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434975-03:00", "latency": 19334042, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434984-03:00", "latency": 19713875, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.434986-03:00", "latency": 13591375, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435067-03:00", "latency": 19759625, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435072-03:00", "latency": 19771583, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435075-03:00", "latency": 19524666, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435081-03:00", "latency": 19896167, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435092-03:00", "latency": 19646666, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435094-03:00", "latency": 19690458, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435101-03:00", "latency": 19787084, "error": "", "status": "OK" }, { "timestamp": "2022-05-30T23:59:04.435106-03:00", "latency": 19597792, "error": "", "status": "OK" }];
+
+	const data = [
+
+		{ name: '13.16 ms', value: 1 },
+
+		{ name: '13.96 ms', value: 25 },
+
+		{ name: '14.75 ms', value: 3 },
+
+		{ name: '15.54 ms', value: 12 },
+
+		{ name: '16.34 ms', value: 15 },
+
+		{ name: '17.13 ms', value: 0 },
+
+		{ name: '17.93 ms', value: 0 },
+
+		{ name: '18.72 ms', value: 9 },
+
+		{ name: '19.51 ms', value: 11 },
+
+		{ name: '20.31 ms', value: 16 },
+
+		{ name: '21.10 ms', value: 8 },
+
+	];
+
+	function createHorizontalBarChart() {
+		let barChart = britecharts.bar(),
+			tooltip = britecharts.miniTooltip(),
+			barContainer = d3.select('.js-bar-container'),
+			containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false,
+			tooltipContainer,
+			dataset;
+
+		tooltip.numberFormat('')
+		tooltip.valueFormatter(function (v) {
+			var percent = v / count * 100;
+			return v + ' ' + '(' + Number.parseFloat(percent).toFixed(1) + ' %)';
+		})
+
+		if (containerWidth) {
+			dataset = data;
+			barChart
+				.isHorizontal(true)
+				.isAnimated(true)
+				.margin({
+					left: 100,
+					right: 20,
+					top: 20,
+					bottom: 20
+				})
+				.colorSchema(britecharts.colors.colorSchemas.teal)
+				.width(containerWidth)
+				.yAxisPaddingBetweenChart(20)
+				.height(400)
+				// .hasPercentage(true)
+				.enableLabels(true)
+				.labelsNumberFormat('')
+				.percentageAxisToMaxRatio(1.3)
+				.on('customMouseOver', tooltip.show)
+				.on('customMouseMove', tooltip.update)
+				.on('customMouseOut', tooltip.hide);
+
+			barChart.orderingFunction(function (a, b) {
+				var nA = a.name.replace(/ms/gi, '');
+				var nB = b.name.replace(/ms/gi, '');
+
+				var vA = Number.parseFloat(nA);
+				var vB = Number.parseFloat(nB);
+
+				return vB - vA;
+			})
+
+			barContainer.datum(dataset).call(barChart);
+
+			tooltipContainer = d3.select('.js-bar-container .bar-chart .metadata-group');
+			tooltipContainer.datum([]).call(tooltip);
+		}
+	}
+
+	function setJSONDownloadLink() {
+		var filename = "data.json";
+		var btn = document.getElementById('dlJSON');
+		var jsonData = JSON.stringify(rawData)
+		var blob = new Blob([jsonData], { type: 'text/json;charset=utf-8;' });
+		var url = URL.createObjectURL(blob);
+		btn.setAttribute("href", url);
+		btn.setAttribute("download", filename);
+	}
+
+	function setCSVDownloadLink() {
+		var filename = "data.csv";
+		var btn = document.getElementById('dlCSV');
+		var csv = Papa.unparse(rawData)
+		var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+		var url = URL.createObjectURL(blob);
+		btn.setAttribute("href", url);
+		btn.setAttribute("download", filename);
+	}
+
+	createHorizontalBarChart();
+
+	setJSONDownloadLink();
+
+	setCSVDownloadLink();
+
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+</html>
