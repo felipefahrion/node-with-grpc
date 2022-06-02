@@ -24,8 +24,8 @@ server.addService(newsProto.NewsService.service, {
     const newNews = {
       id: (newsList.news.length + 1).toString(),
       title: title,
-      body,
-      postImage
+      content,
+      image
     }
 
     newsList.news.push(newNews)

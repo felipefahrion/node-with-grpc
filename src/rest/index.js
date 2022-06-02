@@ -34,8 +34,8 @@ app.post('/create', (req, res) => {
   const newNews = {
     id: (newsList.news.length + 1).toString(),
     title,
-    body,
-    postImage
+    content,
+    image
   }
 
   newsList.news.push(newNews)
