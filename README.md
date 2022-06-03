@@ -39,6 +39,6 @@ ghz -c 100 -n 100 --insecure \
 
 Sample of autocannon command: 
 ```
-autocannon -a 10000 -c 5 -m POST -b "{"titie": "News y", "body": "Essa é uma noticia fake", "postImage":"teste.jpg"}"
+autocannon -a 10000 -c 5 -m POST -b "{"titie": "News y", "content": "Essa é uma noticia fake", "image":"teste.jpg"}"
 localhost:3000/create
 ```
