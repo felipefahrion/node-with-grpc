@@ -1,25 +1,33 @@
-# Nodejs with gRPC
+# Nodejs with gRPC and REST
 
-This project contains a test for gRPC in Nodejs
+## About
+This project is about an evaluation between REST and gRPC.
 
+You can see in this project two big packages that provides the REST and gRPC implementation based on ```grpc-js ``` and ```Express```. 
+
+## Execution
 To execute this project: 
 
-Terminal 1: 
+gRPC Server: 
 
 ```
 npm run server
 ```
 
-Terminal 2: 
+REST: 
 
 ```
-npm run client
+npm run rest
 ```
 
+## Manual Test
 To test on Postman foloow this link: https://blog.postman.com/postman-now-supports-grpc/ 
 
-Test perfomance to this project and use this tool: https://dev.to/hiisi13/easy-ways-to-load-test-a-grpc-service-1dm3
+## Performance Test
 
+The main goal of this project is collect metrics from an evaluation between gRPC and REST. With that, to test it we used ```ghz``` to test RPC requests and ```autocannon``` to test REST calls. 
+
+Sample of ghz commnand:
 ```
 ghz -c 100 -n 100 --insecure \
   --proto ./src/grpc/config/news.proto \
@@ -29,8 +37,8 @@ ghz -c 100 -n 100 --insecure \
 
 ```
 
-Things to pay attention: 
- 
-- use npm, not yarn. 
-- ```.proto``` project root 
-
+Sample of autocannon command: 
+```
+autocannon -a 10000 -c 5 -m POST -b "{"titie": "News y", "body": "Essa é uma noticia fake", "postImage":"teste.jpg"}"
+localhost:3000/create
+```
